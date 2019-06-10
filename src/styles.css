@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/purple-green.css';
+
+* {
+  box-sizing: border-box;
+}
+
+/*pour que sidebar prenne toute la page*/
+html,
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Login-form container */
+.login-container {
+  background: url("assets/img/fond-ecran-login.jpg") no-repeat center / cover;
+}

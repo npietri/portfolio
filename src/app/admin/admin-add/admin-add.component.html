@@ -1,0 +1,61 @@
+<div class="container">
+
+  <div id="manage-experience" class="z-depth1">
+
+    <mat-toolbar class="title-form" color="accent">
+      <div align="center" style="text-align: center; width:100%;">
+        <p>Ajouter une expérience</p>
+      </div>
+    </mat-toolbar>
+
+    <br><br>
+
+    <mat-dialog-content align="left">
+      <form [formGroup]="experienceForm" (ngSubmit)="onFormSubmit(experienceForm.value)" class="form">
+        <mat-form-field class="form-element">
+          <input formControlName="entreprise" matTooltip="Enter ompany name" matInput placeholder="Nom de l'entreprise">
+          <mat-error *ngIf="!experienceForm.get('name').valid && experienceForm.get('name').touched">
+            Ce champ est obligatoire
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+          <input formControlName="lieu" matTooltip="Enter company place" matInput placeholder="lieu">
+          <mat-error *ngIf="!experienceForm.get('place').valid && experienceForm.get('place').touched">
+            {{ getErrorPlace() }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+          <input formControlName="date" matTooltip="Enter company date" matInput placeholder="date">
+          <mat-error *ngIf="!experienceForm.get('date').valid && experienceForm.get('date').touched">
+            {{ getErrorDate() }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+          <input formControlName="lieu" matTooltip="Enter company description" matInput placeholder="description">
+          <mat-error *ngIf="!experienceForm.get('description').valid && experienceForm.get('description').touched">
+            {{ getErrorDescription() }}
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-dialog-actions align="center">
+          <button type="submit" mat-raised-button color="accent" matTooltip="Click Submit Button"
+            [disabled]="!experienceForm.valid">Valider</button>
+          <button type="reset" mat-raised-button color="accent" matTooltip="Click Reset Button"
+            (click)="closeForm()">Fermer</button>
+        </mat-dialog-actions>
+
+        <p *ngIf="dataSaved" style="color:rgb(0, 128, 0);font-size:20px;font-weight:bold" Class="success" align="left">
+          {{message}}
+        </p>
+
+        <br><br>
+
+      </form>
+    </mat-dialog-content>
+  </div>
+
+</div>
