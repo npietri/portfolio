@@ -13,7 +13,7 @@ body {
 
 /* Login-form container */
 .login-container {
-  background: url("assets/img/fond-ecran-login.jpg") no-repeat center / cover;
+  background: url("assets/img/bgLogin.jpg") no-repeat center / cover;
 }
 /**
 * Generated theme by Material Theme Generator
