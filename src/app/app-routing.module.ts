@@ -9,6 +9,8 @@ import { AdminAddComponent } from './admin/admin-add/admin-add.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FilterdumbComponent } from './dashboard/filterdumb/filterdumb.component';
 import { TabledumbComponent } from './dashboard/tabledumb/tabledumb.component';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
+import { PlayComponent } from './play/play.component';
 
 const routes: Routes = [
   {
@@ -31,6 +33,15 @@ const routes: Routes = [
     path: 'd',
     component: DashboardComponent,
   },
+  {
+    path: 'play',
+    component: PlayComponent
+  },
+  { path: 'not-found',
+   component: FourOhFourComponent },
+  { path: '**',
+   redirectTo: 'not-found' },
+  
 ]
 
 @NgModule({

@@ -1,6 +1,9 @@
 .div-side-entiere {
   background-color: #424242;
 }
+#sidenav {
+  background-color: #424242;
+}
 
 a {
   text-decoration: none;

@@ -28,3 +28,15 @@ mat-toolbar {
     border-radius: 0px;
   }
 }
+.mat-menu-item {
+  color: rgb(255, 174, 0) !important;
+}
+
+button.mat-menu-item {
+  background-color: rgb(248, 236, 131);
+}
+
+button.mat-menu-item:hover {
+  background-color: rgb(255, 196, 0);
+  color: #fff !important;
+}

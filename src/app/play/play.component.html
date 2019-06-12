@@ -1,0 +1,62 @@
+<div class="cadrePalyComponent">
+ 
+  <div style="text-align:center">
+    <h1> {{ title }}   </h1>
+    <hr>
+    <br>
+    <h3>interpolation </h3>
+    
+    <span>interpolation avec méthode (nombre au carré) carré de 5 = </span>
+ 
+    {{square(5)}}
+
+    <hr>
+    <br>
+    <h3>Binding / liaisons classes, styles, etc</h3> <br>
+    <span>différentes actions "mousse" sur le carré</span>
+     <div style="width:200px; height:200px" [style.backgroundColor]="color" (click)="changeColor('green')"
+      (mouseenter)="changeColor('blue')" (mouseleave)="changeColor('red')">
+    </div>
+      <hr>
+      <br>
+      <span>Double data binding</span>
+      <input type="text" placeholder="écris ici" [(ngModel)]="content">
+      <p>{{content}}</p>
+      <br><br>
+
+    <hr>
+    <br>
+
+      <p *ngIf="display"> bonjour </p>
+      <button (click)="display=!display">bouton</button>
+
+
+    <hr>
+    <br>
+    <span> Fais apparaitre le carré dans la couleur souhaitée  </span>
+    <input type="text" placeholder="ecris la couleur en anglais" [(ngModel)]="carreColor" />
+    <div [ngStyle]="{
+      width:'200px',
+      height :'200px',
+      backgroundColor : carreColor
+  }"></div>
+  <hr>
+    <br>
+    <span>ngFor(directive structurelle)</span>
+    <ul>
+      <li class="firstList" *ngFor="let user of users ; let i = index;">{{user.nom}}| {{i}} </li>
+    </ul>
+
+ <hr>
+<br><br>
+<div class="exempleRequete">
+<h3>Requette http avec reqres.in/api/</h3>
+<br><br>
+<ul *ngIf="profils">
+    <li *ngFor="let user of profils.data">
+        <img [src]="user.avatar">
+        <p>{{ user.first_name }} {{ user.last_name }}</p>
+    </li>
+</ul>
+  
+</div>

@@ -1,3 +1,5 @@
+import { MatButtonModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatFormFieldModule, MatSelectModule, MatIconModule, MatToolbarModule, MatCardModule, MatDialogModule, MatTableModule, MatMenuModule, MatProgressSpinnerModule, MatSidenavModule, MatListModule, MatTabsModule, MatPaginatorModule, MatSortModule, ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,11 +14,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { MatButtonModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatFormFieldModule, MatSelectModule, MatIconModule, MatToolbarModule, MatCardModule, MatDialogModule, MatTableModule, MatMenuModule, MatProgressSpinnerModule, MatSidenavModule, MatListModule, MatTabsModule, MatPaginatorModule, MatSortModule, ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
+import { PlayComponent } from './play/play.component';
 
 
 
@@ -29,6 +32,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     routingComponents,
     LayoutComponent,
     DashboardComponent,
+    FourOhFourComponent,
+    PlayComponent,
   
   ],
   imports: [
@@ -82,7 +87,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatIconModule,
     MatProgressSpinnerModule,
     MatTabsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatMenuModule,
   ],
   providers: [{ provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
   ],

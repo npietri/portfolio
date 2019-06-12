@@ -1,0 +1,35 @@
+.firstList {
+    color: rgb(245, 122, 8);
+}
+h1 {
+    color: rgb(255, 248, 147);
+    font-weight: bold
+    }
+h3 {
+    color: rgb(158, 4, 4);
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    background: rgb(253, 255, 160);
+    padding: 2em;
+    border-radius: 4px;
+    margin-bottom: 7px;
+    display: grid;
+    grid-template-columns: 60px auto;
+}
+p {
+    color: rgb(245, 122, 8);
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+img {
+    border-radius: 50%;
+    width: 100%;
+}
+
