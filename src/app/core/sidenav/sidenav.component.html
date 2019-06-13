@@ -1,40 +1,38 @@
-<!-- <div class="div-side-entiere">
-  <mat-nav-list>
-    <a mat-list-item routerLink="/" (click)="onSidenavClose()">
-      <img src="../../assets/img/photocv3.jpg" id="photo">
-    </a>
-  </mat-nav-list>
-  <br><br><br>
-  <hr><br>
-  <mat-nav-list *ngFor="let e of entitiesLink">
-    <a mat-list-item routerLink='/{{e.link}}' (click)="onSidenavClose()">
-      <mat-icon>{{e.icon}}</mat-icon><span class="nav-caption">{{e.entity}}</span>
-    </a>
-  </mat-nav-list>
-</div> -->
-<div>
 <mat-sidenav-container fxFlexFill>
-    
       <mat-nav-list>
-        <a href="#" mat-list-item>
-          <mat-icon>notifications</mat-icon>
-          Notifications
-        </a>
-        <a href="#" mat-list-item>
-          <mat-icon>message</mat-icon>
-          Messages</a>
-        <a href="#" mat-list-item>
-          <mat-icon>account_box</mat-icon>
-          My Account
-        </a>
-        <a href="#" mat-list-item>
-          <mat-icon>lock</mat-icon>
-          My Account
-        </a>
-        <a (click)="onSidenavClose()" mat-list-item>
-          <mat-icon>close</mat-icon> 
-        </a>
-      </mat-nav-list>
 
+ <a (click)="goToPage('login')" mat-button>
+          <mat-icon>how_to_reg</mat-icon>
+          Admin
+        </a>
+
+  <mat-list-item [matMenuTriggerFor]="apropos">
+    <mat-icon>portrait</mat-icon>
+    <a matline>à propos de moi</a>
+</mat-list-item>
+<mat-menu #apropos="matMenu">
+            <button  mat-menu-item routerLink="/education" routerLinkActive="active">éductation</button>
+            <button  mat-menu-item routerLink="/langue" routerLinkActive="active">langues</button>
+            <button  mat-menu-item routerLink="/contact" routerLinkActive="active">contact</button>
+</mat-menu>
+
+<mat-list-item [matMenuTriggerFor]="projets">
+    <mat-icon>list_alt</mat-icon>
+    <a matline>Projets</a>
+</mat-list-item>
+<mat-menu #projets="matMenu">
+            <button  mat-menu-item routerLink="/presentation" routerLinkActive="active">présentation</button>
+            <button mat-menu-item routerLink="/play" routerLinkActive="active">play</button>
+</mat-menu>
+
+         <a mat-button routerLink="/skills" routerLinkActive="active">
+          <mat-icon>bar_chart</mat-icon>
+         Skills
+        </a>
+          <a (click)="onSidenavClose()" mat-list-item>
+          <mat-icon>close</mat-icon> Close
+        </a>
+
+      </mat-nav-list>
   </mat-sidenav-container>
-</div>
+
