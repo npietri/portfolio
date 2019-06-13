@@ -2,33 +2,28 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // COMPONENTS
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { AdminComponent } from './admin/admin.component';
-import { AdminAddComponent } from './admin/admin-add/admin-add.component';
+import { HomeComponent } from './mainpage/home/home.component';
+import { LoginComponent } from './adminpage/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FilterdumbComponent } from './dashboard/filterdumb/filterdumb.component';
 import { TabledumbComponent } from './dashboard/tabledumb/tabledumb.component';
-import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
-import { PlayComponent } from './play/play.component';
+import { FourOhFourComponent } from './core/four-oh-four/four-oh-four.component';
+import { PlayComponent } from './mainpage/play/play.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent
+  },
+  { 
+    path: '',
+    redirectTo: '/home', pathMatch: 'full' 
   },
   {
     path: 'login',
     component: LoginComponent
   },
-  {
-    path: 'admin',
-    component: AdminComponent
-  },
-  {
-    path: 'admin-add',
-    component: AdminAddComponent,
-  },
+ 
   {
     path: 'd',
     component: DashboardComponent,
@@ -52,12 +47,9 @@ export class AppRoutingModule { }
 export const routingComponents = [
   HomeComponent,
   LoginComponent,
-  AdminComponent,
-  AdminAddComponent,
   DashboardComponent,
   FilterdumbComponent,
   TabledumbComponent,
-
   ];
 
 

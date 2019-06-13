@@ -17,17 +17,17 @@
   
         <button mat-button [matMenuTriggerFor]="belowMenu">  <mat-icon>portrait</mat-icon>A propos de moi</button>
           <mat-menu  #belowMenu="matMenu" yPosition="below">
-            <button  mat-menu-item>éductation</button>
-            <button  mat-menu-item>langues</button>
-            <button  mat-menu-item>contact</button>
+            <button  mat-menu-item routerLink="/education" routerLinkActive="active">éductation</button>
+            <button  mat-menu-item routerLink="/langue" routerLinkActive="active">langues</button>
+            <button  mat-menu-item routerLink="/contact" routerLinkActive="active">contact</button>
         </mat-menu>
         
-        <button mat-button [matMenuTriggerFor]="belowMenu">  <mat-icon>list_alt</mat-icon>Projets</button>
-          <mat-menu  #belowMenu="matMenu" yPosition="below">
-            <button  mat-menu-item>présentation</button>
-            <button  mat-menu-item>play</button>
+        <button  mat-button [matMenuTriggerFor]="belowMenu2">  <mat-icon>list_alt</mat-icon>Projets</button>
+          <mat-menu  #belowMenu2="matMenu" yPosition="below">
+            <button  mat-menu-item routerLink="/presentation" routerLinkActive="active">présentation</button>
+            <button mat-menu-item routerLink="/play" routerLinkActive="active">play</button>
         </mat-menu>
-         <a href="#" mat-button>
+         <a mat-button routerLink="/skills" routerLinkActive="active">
           <mat-icon>bar_chart</mat-icon>
          Skills
         </a>

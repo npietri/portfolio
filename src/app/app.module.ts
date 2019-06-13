@@ -12,14 +12,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
-import { HeaderComponent } from './header/header.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
+import { HeaderComponent } from './core/header/header.component';
+import { SidenavComponent } from './core/sidenav/sidenav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
-import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
-import { PlayComponent } from './play/play.component';
+import { FourOhFourComponent } from './core/four-oh-four/four-oh-four.component';
+import { PlayComponent } from './mainpage/play/play.component';
 
 
 
@@ -30,7 +29,6 @@ import { PlayComponent } from './play/play.component';
     HeaderComponent,
     SidenavComponent,
     routingComponents,
-    LayoutComponent,
     DashboardComponent,
     FourOhFourComponent,
     PlayComponent,

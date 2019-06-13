@@ -28,7 +28,7 @@
     <br>
 
       <p *ngIf="display"> bonjour </p>
-      <button (click)="display=!display">bouton</button>
+      <button mat-stroked-button color="warn" (click)="display=!display">bouton</button>
 
 
     <hr>
@@ -41,6 +41,12 @@
       backgroundColor : carreColor
   }"></div>
   <hr>
+    <br>
+ <h3>Pipes </h3>
+     <p>Mon anniversaire est le : {{ birthday | date:format | uppercase }}. Clique sur le bouton pour obtenir une autre format.</p>
+  <button mat-stroked-button color="warn" (click)="toggleFormat()">Changer le format</button>
+
+    <hr>
     <br>
     <span>ngFor(directive structurelle)</span>
     <ul>

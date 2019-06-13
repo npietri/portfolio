@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayService } from '../service/play.service';
+import { PlayService } from '../../core/service/play.service';
 
 @Component({
   selector: 'app-play',
@@ -56,4 +56,20 @@ export class PlayComponent implements OnInit {
 
   public carreColor: string = "";
 
+////////Pipes//////////
+  birthday = new Date(1983, 7, 29);
+  francaisFormat = 'd MMMM y';
+  americanFormat = 'MMMM d, y';
+  toggle = true; // format britannique par défaut
+
+  get format() {
+    return this.toggle ? this.americanFormat : this.francaisFormat ; 
+  }
+
+  toggleFormat() { this.toggle = !this.toggle; }
+
 }
+
+
+
+
