@@ -1,3 +1,8 @@
+/**
+* Generated theme by Material Theme Generator
+* https://material-theme-generator.travetto.io
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
 
 * {
   box-sizing: border-box;
@@ -15,11 +20,7 @@ body {
 .login-container {
   background: url("assets/img/bgLogin.jpg") no-repeat center / cover;
 }
-/**
-* Generated theme by Material Theme Generator
-* https://material-theme-generator.travetto.io
-*/
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+
 
 .mat-badge-content {
   font-weight: 600;

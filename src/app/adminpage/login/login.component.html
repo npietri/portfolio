@@ -1,24 +1,36 @@
 <div class="login-container" fxLayout="column">
   <div class="login-title">Portfolio</div>
-   <form [formGroup]="loginForm" (ngSubmit)="submit()">
-  <div fxLayout="row" fxLayoutAlign="center center" class="login-main">
-    <mat-card>
-      <mat-card-content fxLayout="column">
-        <mat-form-field>
-          <input formControlName="email" matInput placeholder="Adresse Mail">
-        </mat-form-field>
-        <mat-form-field>
-          <input type="password"  formControlName="password" matInput placeholder="Mot de Passe">
-        </mat-form-field>
-      </mat-card-content>
-      <mat-card-actions align="end">
-        <button mat-raised-button color="primary" type="submit" (click)="login()" >Login</button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-    </form>
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <div fxLayout="row" fxLayoutAlign="center center" class="login-main">
+      <mat-card>
+        <mat-card-content fxLayout="column">
+          <mat-form-field>
+            <input
+              formControlName="email"
+              matInput
+              placeholder="Adresse Mail"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              type="password"
+              formControlName="password"
+              matInput
+              placeholder="Mot de Passe"
+            />
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            (click)="login()"
+          >
+            Login
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </form>
 </div>
-
-
-
-  
