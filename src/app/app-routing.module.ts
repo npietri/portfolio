@@ -9,6 +9,7 @@ import { FilterdumbComponent } from './dashboard/filterdumb/filterdumb.component
 import { TabledumbComponent } from './dashboard/tabledumb/tabledumb.component';
 import { FourOhFourComponent } from './core/four-oh-four/four-oh-four.component';
 import { PlayComponent } from './mainpage/play/play.component';
+import { ExperienceproComponent } from './mainpage/experiencepro/experiencepro.component';
 
 const routes: Routes = [
   {
