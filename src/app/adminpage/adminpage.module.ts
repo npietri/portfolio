@@ -1,14 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import { AdminpageRoutingModule } from './adminpage-routing.module';
-import { ExperienceproComponent } from './experiencepro/experiencepro.component';
+import { AdminpageRoutingModule } from "./adminpage-routing.module";
+import { EntrepriseComponent } from "./entreprise/entreprise.component";
 
 @NgModule({
-  declarations: [ExperienceproComponent],
-  imports: [
-    CommonModule,
-    AdminpageRoutingModule
-  ]
+  declarations: [EntrepriseComponent],
+  imports: [CommonModule, AdminpageRoutingModule]
 })
-export class AdminpageModule { }
+export class AdminpageModule {}

@@ -9,7 +9,7 @@ import { FilterdumbComponent } from "./dashboard/filterdumb/filterdumb.component
 import { TabledumbComponent } from "./dashboard/tabledumb/tabledumb.component";
 import { FourOhFourComponent } from "./core/four-oh-four/four-oh-four.component";
 import { PlayComponent } from "./mainpage/play/play.component";
-import { ExperienceproComponent } from "./mainpage/experiencepro/experiencepro.component";
+import { EntrepriseComponent } from "./adminpage/entreprise/entreprise.component";
 
 const routes: Routes = [
   {
@@ -35,8 +35,8 @@ const routes: Routes = [
     component: PlayComponent
   },
   {
-    path: "experiencepro",
-    component: ExperienceproComponent
+    path: "entreprise",
+    component: EntrepriseComponent
   },
   { path: "not-found", component: FourOhFourComponent },
   { path: "**", redirectTo: "not-found" }

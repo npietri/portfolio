@@ -40,7 +40,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { FourOhFourComponent } from "./core/four-oh-four/four-oh-four.component";
 import { PlayComponent } from "./mainpage/play/play.component";
-import { ExperienceproComponent } from "./mainpage/experiencepro/experiencepro.component";
+import { EntrepriseComponent } from "./adminpage/entreprise/entreprise.component";
 
 @NgModule({
   declarations: [
@@ -51,7 +51,7 @@ import { ExperienceproComponent } from "./mainpage/experiencepro/experiencepro.c
     DashboardComponent,
     FourOhFourComponent,
     PlayComponent,
-    ExperienceproComponent,
+    EntrepriseComponent,
     FilterPipe
   ],
   imports: [
