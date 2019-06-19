@@ -26,13 +26,18 @@
       <a matline>Projets</a>
     </mat-list-item>
     <mat-menu #projets="matMenu">
+      <button mat-menu-item routerLink="/portfolio" routerLinkActive="active">
+        portfolio
+      </button>
+
       <button
         mat-menu-item
-        routerLink="/presentation"
+        routerLink="/experiencepro"
         routerLinkActive="active"
       >
-        présentation
+        experience pro
       </button>
+
       <button mat-menu-item routerLink="/play" routerLinkActive="active">
         play
       </button>

@@ -28,6 +28,7 @@
         <button mat-button [matMenuTriggerFor]="belowMenu">
           <mat-icon>portrait</mat-icon>A propos de moi
         </button>
+
         <mat-menu #belowMenu="matMenu" yPosition="below">
           <button
             mat-menu-item
@@ -36,6 +37,7 @@
           >
             éductation
           </button>
+
           <button mat-menu-item routerLink="/langue" routerLinkActive="active">
             langues
           </button>
@@ -45,16 +47,26 @@
         </mat-menu>
 
         <button mat-button [matMenuTriggerFor]="belowMenu2">
-          <mat-icon>list_alt</mat-icon>Projets
+          <mat-icon>list_alt</mat-icon>Portfolio
         </button>
+
         <mat-menu #belowMenu2="matMenu" yPosition="below">
           <button
             mat-menu-item
-            routerLink="/presentation"
+            routerLink="/portofolio"
             routerLinkActive="active"
           >
-            présentation
+            portfolio
           </button>
+
+          <button
+            mat-menu-item
+            routerLink="/experiencepro"
+            routerLinkActive="active"
+          >
+            experience pro
+          </button>
+
           <button mat-menu-item routerLink="/play" routerLinkActive="active">
             play
           </button>
