@@ -9,6 +9,8 @@ import {
   MatToolbarModule,
   MatCardModule,
   MatDialogModule,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
   MatTableModule,
   MatMenuModule,
   MatProgressSpinnerModule,
@@ -41,6 +43,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { FourOhFourComponent } from "./core/four-oh-four/four-oh-four.component";
 import { PlayComponent } from "./mainpage/play/play.component";
 import { EntrepriseComponent } from "./adminpage/entreprise/entreprise.component";
+import { EntrepriseModifyComponent } from "./adminpage/entreprise/entreprise-modify/entreprise-modify.component";
 
 @NgModule({
   declarations: [
@@ -52,7 +55,8 @@ import { EntrepriseComponent } from "./adminpage/entreprise/entreprise.component
     FourOhFourComponent,
     PlayComponent,
     EntrepriseComponent,
-    FilterPipe
+    FilterPipe,
+    EntrepriseModifyComponent
   ],
   imports: [
     BrowserModule,
@@ -109,7 +113,9 @@ import { EntrepriseComponent } from "./adminpage/entreprise/entreprise.component
     MatMenuModule
   ],
   providers: [
-    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
+    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
+    { provide: MatDialogRef, useValue: {} },
+    { provide: MAT_DIALOG_DATA, useValue: [] }
   ],
   bootstrap: [AppComponent]
 })

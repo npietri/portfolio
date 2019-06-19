@@ -1,0 +1,102 @@
+<div class="container">
+  <div id="manage-entreprise" class="z-depth1">
+    <mat-toolbar class="title-form" color="accent">
+      <div align="center" style="text-align: center; width:100%;">
+        <p>AJOUTER UNE EXPERIENCE</p>
+      </div>
+    </mat-toolbar>
+
+    <br /><br />
+
+    <mat-dialog-content align="left">
+      <form
+        [formGroup]="experienceproForm"
+        (ngSubmit)="onFormSubmit(experienceproForm.value)"
+        class="form"
+      >
+        <mat-form-field class="form-element">
+          <input
+            formControlName="name"
+            matTooltip="Enter Entreprise Name"
+            matInput
+            placeholder="Nom de l'entreprise"
+          />
+          <mat-error
+            *ngIf="
+              !experienceproForm.get('nom').valid &&
+              experienceproFForm.get('nom').touched
+            "
+          >
+            Ce champ est obligatoire
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+          <input
+            formControlName="Date"
+            matTooltip="Enter Entreprise Date"
+            matInput
+            placeholder="Date"
+          />
+          <mat-error
+            *ngIf="
+              !experienceproForm.get('date').valid &&
+              experienceproForm.get('date').touched
+            "
+          >
+            Ce champ est obligatoire
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-element">
+          <input
+            formControlName="description"
+            matTooltip="Enter Exeprience Description"
+            matInput
+            placeholder="description"
+          />
+          <mat-error
+            *ngIf="
+              !experienceproFForm.get('description').valid &&
+              experienceproF.get('description').touched
+            "
+          >
+            Ce champ est obligatoire
+          </mat-error>
+        </mat-form-field>
+
+        <mat-dialog-actions align="center">
+          <button
+            type="submit"
+            mat-raised-button
+            color="accent"
+            matTooltip="Click Submit Button"
+            [disabled]="!experienceproForm.valid"
+          >
+            Valider
+          </button>
+          <button
+            type="reset"
+            mat-raised-button
+            color="accent"
+            matTooltip="Click Reset Button"
+            (click)="closeForm()"
+          >
+            Fermer
+          </button>
+        </mat-dialog-actions>
+
+        <p
+          *ngIf="dataSaved"
+          style="color:rgb(128, 9, 0);font-size:20px;font-weight:bold"
+          Class="success"
+          align="left"
+        >
+          {{ message }}
+        </p>
+
+        <br /><br />
+      </form>
+    </mat-dialog-content>
+  </div>
+</div>

@@ -1,17 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
-import {
-  FormBuilder,
-  Validators,
-  FormGroup,
-  FormGroupDirective
-} from "@angular/forms";
+import { FormBuilder } from "@angular/forms";
 import { MatTableDataSource } from "@angular/material";
 import { MatDialog, MatDialogConfig } from "@angular/material";
+import { Router } from "@angular/router";
 
 import { Experiencepro } from "src/app/core/service/experiencepro";
 import { ExperienceproService } from "src/app/core/service/experiencepro.service";
-//import { EntrepriseAddComponent } from ; à faire
+import { EntrepriseModifyComponent } from "./entreprise-modify/entreprise-modify.component";
 
 @Component({
   selector: "app-entreprise",
@@ -29,35 +25,38 @@ export class EntrepriseComponent implements OnInit {
 
   constructor(
     private formbuilder: FormBuilder,
-    private experienceproService: ExperienceproService //private dialog: MatDialog
+    private experienceproService: ExperienceproService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {
     this.loadAllEntreprises();
   }
 
-  // openDialog(experiencepro: Experiencepro = null) {
-  //   const dialogConfig = new MatDialogConfig();
+  openDialog(experiencepro: Experiencepro = null) {
+    const dialogConfig = new MatDialogConfig();
 
-  //   dialogConfig.disableClose = false;
-  //   dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
 
-  //   if (experiencepro != null) {
-  //     dialogConfig.data = {
-  //       experienceproToUpdate: experiencepro
-  //     };
-  //   }
+    if (experiencepro != null) {
+      dialogConfig.data = {
+        entrepriseToUpdate: experiencepro
+      };
+      const dialogRef = this.dialog.open(
+        EntrepriseModifyComponent,
+        dialogConfig
+      );
 
-  //   const dialogRef = this.dialog.open(entrepriseAddComponent, dialogConfig);
+      dialogRef.afterClosed().subscribe(data => {
+        this.loadAllEntreprises();
 
-  //   dialogRef.afterClosed().subscribe(data => {
-  //     this.loadAllEntreprises();
-
-  //     if (data != null) {
-  //       this.message = data;
-  //     }
-  //   });
-  // }
+        if (data != null) {
+          this.message = data;
+        }
+      });
+    }
+  }
 
   loadAllEntreprises() {
     //double appel... pas gégé
@@ -66,11 +65,11 @@ export class EntrepriseComponent implements OnInit {
     });
   }
 
-  // loadEntrepriseToEdit(experiencepro: Experiencepro) {
-  //   this.message = null;
-  //   this.dataSaved = null;
-  //   this.openDialog(experiencepro);
-  // }
+  loadEntrepriseToEdit(experiencepro: Experiencepro) {
+    this.message = null;
+    this.dataSaved = null;
+    this.openDialog(experiencepro);
+  }
 
   deleteEntreprise(entrepriseId: number) {
     if (confirm("Voulez-vous vraiment supprimer cette entreprise ?")) {
