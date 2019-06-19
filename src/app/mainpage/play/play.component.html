@@ -1,68 +1,103 @@
-<div class="cadrePalyComponent">
- 
+<div class="cadrePlayComponent">
   <div style="text-align:center">
-    <h1> {{ title }}   </h1>
-    <hr>
-    <br>
-    <h3>interpolation </h3>
-    
+    <h1>{{ title }}</h1>
+    <hr />
+    <br />
+    <h3>interpolation</h3>
+
     <span>interpolation avec méthode (nombre au carré) carré de 5 = </span>
- 
-    {{square(5)}}
 
-    <hr>
-    <br>
-    <h3>Binding / liaisons classes, styles, etc</h3> <br>
+    {{ square(5) }}
+
+    <hr />
+    <br />
+
+    <!-- /////////////////////Binding//////////////////////////////////// -->
+    <h3>Binding / liaisons classes, styles, etc</h3>
+    <br />
     <span>différentes actions "mousse" sur le carré</span>
-     <div style="width:200px; height:200px" [style.backgroundColor]="color" (click)="changeColor('green')"
-      (mouseenter)="changeColor('blue')" (mouseleave)="changeColor('red')">
-    </div>
-      <hr>
-      <br>
-      <span>Double data binding</span>
-      <input type="text" placeholder="écris ici" [(ngModel)]="content">
-      <p>{{content}}</p>
-      <br><br>
+    <div
+      style="width:200px; height:200px"
+      [style.backgroundColor]="color"
+      (click)="changeColor('green')"
+      (mouseenter)="changeColor('blue')"
+      (mouseleave)="changeColor('red')"
+    ></div>
+    <hr />
+    <br />
+    <span>Double data binding</span>
+    <input type="text" placeholder="écris ici" [(ngModel)]="content" />
+    <p>{{ content }}</p>
+    <br /><br />
 
-    <hr>
-    <br>
+    <hr />
+    <br />
 
-      <p *ngIf="display"> bonjour </p>
-      <button mat-stroked-button color="warn" (click)="display=!display">bouton</button>
+    <p *ngIf="display">bonjour</p>
+    <button mat-stroked-button color="warn" (click)="display = !display">
+      bouton
+    </button>
 
+    <hr />
+    <br />
+    <span> Fais apparaitre le carré dans la couleur souhaitée </span>
+    <input
+      type="text"
+      placeholder="ecris la couleur en anglais"
+      [(ngModel)]="carreColor"
+    />
+    <div
+      [ngStyle]="{
+        width: '200px',
+        height: '200px',
+        backgroundColor: carreColor
+      }"
+    ></div>
+    <hr />
+    <br />
 
-    <hr>
-    <br>
-    <span> Fais apparaitre le carré dans la couleur souhaitée  </span>
-    <input type="text" placeholder="ecris la couleur en anglais" [(ngModel)]="carreColor" />
-    <div [ngStyle]="{
-      width:'200px',
-      height :'200px',
-      backgroundColor : carreColor
-  }"></div>
-  <hr>
-    <br>
- <h3>Pipes </h3>
-     <p>Mon anniversaire est le : {{ birthday | date:format | uppercase }}. Clique sur le bouton pour obtenir une autre format.</p>
-  <button mat-stroked-button color="warn" (click)="toggleFormat()">Changer le format</button>
+    <!-- //////////////////// Pipes /////////////////////////// -->
 
-    <hr>
-    <br>
-    <span>ngFor(directive structurelle)</span>
+    <h3>Pipes</h3>
+    <p>
+      Mon anniversaire est le : {{ birthday | date: format | uppercase }}.
+      Clique sur le bouton pour obtenir une autre format.
+    </p>
+    <button mat-stroked-button color="warn" (click)="toggleFormat()">
+      Changer le format
+    </button>
+    <h3>Pipes & Search</h3>
+    <input
+      [(ngModel)]="searchText"
+      type="text"
+      placeholder="rechercher un élève de la classe"
+    />
     <ul>
-      <li class="firstList" *ngFor="let user of users ; let i = index;">{{user.nom}}| {{i}} </li>
+      <li *ngFor="let e of eleves | filter: searchText">
+        {{ e }}
+      </li>
     </ul>
 
- <hr>
-<br><br>
-<div class="exempleRequete">
-<h3>Requette http avec reqres.in/api/</h3>
-<br><br>
-<ul *ngIf="profils">
-    <li *ngFor="let user of profils.data">
-        <img [src]="user.avatar">
-        <p>{{ user.first_name }} {{ user.last_name }}</p>
-    </li>
-</ul>
-  
+    <hr />
+    <br />
+    <span>ngFor, ex (directive structurelle) autre exemple</span>
+    <ul>
+      <li class="firstList" *ngFor="let user of users; let i = index">
+        {{ user.nom }}| {{ i }}
+      </li>
+    </ul>
+    <!-- /////////////////////Requettes http //////////////////////////////////// -->
+    <hr />
+    <br /><br />
+    <div class="exempleRequete">
+      <h3>Requette http avec reqres.in/api/</h3>
+      <br /><br />
+      <ul *ngIf="profils">
+        <li *ngFor="let user of profils.data">
+          <img [src]="user.avatar" />
+          <p>{{ user.first_name }} {{ user.last_name }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

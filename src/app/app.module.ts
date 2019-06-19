@@ -21,8 +21,8 @@ import {
   ShowOnDirtyErrorStateMatcher
 } from "@angular/material";
 
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 import { CommonModule } from "@angular/common";
 import { MaterialModule } from "./core/material.module";
 
@@ -31,6 +31,7 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { FilterPipe } from "../app/core/pipes/filter.pipe";
 
 import { AppRoutingModule, routingComponents } from "./app-routing.module";
 import { HeaderComponent } from "./core/header/header.component";
@@ -50,7 +51,8 @@ import { ExperienceproComponent } from "./mainpage/experiencepro/experiencepro.c
     DashboardComponent,
     FourOhFourComponent,
     PlayComponent,
-    ExperienceproComponent
+    ExperienceproComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
