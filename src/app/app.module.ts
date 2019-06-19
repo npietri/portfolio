@@ -1,27 +1,45 @@
-import { MatButtonModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatFormFieldModule, MatSelectModule, MatIconModule, MatToolbarModule, MatCardModule, MatDialogModule, MatTableModule, MatMenuModule, MatProgressSpinnerModule, MatSidenavModule, MatListModule, MatTabsModule, MatPaginatorModule, MatSortModule, ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatInputModule,
+  MatRadioModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatCardModule,
+  MatDialogModule,
+  MatTableModule,
+  MatMenuModule,
+  MatProgressSpinnerModule,
+  MatSidenavModule,
+  MatListModule,
+  MatTabsModule,
+  MatPaginatorModule,
+  MatSortModule,
+  ErrorStateMatcher,
+  ShowOnDirtyErrorStateMatcher
+} from "@angular/material";
 
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MaterialModule } from './core/material.module';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { MaterialModule } from "./core/material.module";
 
-import { AppComponent } from './app.component';
+import { AppComponent } from "./app.component";
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
-import { AppRoutingModule, routingComponents } from './app-routing.module';
-import { HeaderComponent } from './core/header/header.component';
-import { SidenavComponent } from './core/sidenav/sidenav.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { HttpClientModule } from '@angular/common/http';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { FourOhFourComponent } from './core/four-oh-four/four-oh-four.component';
-import { PlayComponent } from './mainpage/play/play.component';
-
-
-
+import { AppRoutingModule, routingComponents } from "./app-routing.module";
+import { HeaderComponent } from "./core/header/header.component";
+import { SidenavComponent } from "./core/sidenav/sidenav.component";
+import { HttpClientModule } from "@angular/common/http";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { FourOhFourComponent } from "./core/four-oh-four/four-oh-four.component";
+import { PlayComponent } from "./mainpage/play/play.component";
+import { ExperienceproComponent } from "./mainpage/experiencepro/experiencepro.component";
 
 @NgModule({
   declarations: [
@@ -32,7 +50,7 @@ import { PlayComponent } from './mainpage/play/play.component';
     DashboardComponent,
     FourOhFourComponent,
     PlayComponent,
-  
+    ExperienceproComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +89,7 @@ import { PlayComponent } from './mainpage/play/play.component';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatFormFieldModule,
+    MatFormFieldModule
   ],
   exports: [
     CommonModule,
@@ -86,10 +104,11 @@ import { PlayComponent } from './mainpage/play/play.component';
     MatProgressSpinnerModule,
     MatTabsModule,
     MatSidenavModule,
-    MatMenuModule,
+    MatMenuModule
   ],
-  providers: [{ provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
+  providers: [
+    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

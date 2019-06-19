@@ -1,14 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import { MainpageRoutingModule } from './mainpage-routing.module';
-import { ExperienceproComponent } from './experiencepro/experiencepro.component';
+import { MainpageRoutingModule } from "./mainpage-routing.module";
 
 @NgModule({
-  declarations: [ExperienceproComponent],
-  imports: [
-    CommonModule,
-    MainpageRoutingModule
-  ]
+  declarations: [],
+  imports: [CommonModule, MainpageRoutingModule]
 })
-export class MainpageModule { }
+export class MainpageModule {}
