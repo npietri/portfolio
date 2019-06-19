@@ -44,6 +44,8 @@ import { FourOhFourComponent } from "./core/four-oh-four/four-oh-four.component"
 import { PlayComponent } from "./mainpage/play/play.component";
 import { EntrepriseComponent } from "./adminpage/entreprise/entreprise.component";
 import { EntrepriseModifyComponent } from "./adminpage/entreprise/entreprise-modify/entreprise-modify.component";
+import { ContactComponent } from "./mainpage/contact/contact.component";
+import { DumbchoixComponent } from "./mainpage/contact/dumbchoix/dumbchoix.component";
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { EntrepriseModifyComponent } from "./adminpage/entreprise/entreprise-mod
     PlayComponent,
     EntrepriseComponent,
     FilterPipe,
-    EntrepriseModifyComponent
+    EntrepriseModifyComponent,
+    ContactComponent,
+    DumbchoixComponent
   ],
   imports: [
     BrowserModule,

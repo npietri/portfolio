@@ -1,3 +1,6 @@
-<p>
-  contact works!
-</p>
+<h2>Selectionnez, ci-dessous, les coordonnées que vous souhaitez obtenir</h2>
+
+<app-dumbchoix [options]="optionsArr" (changedOption)="onOptionChange($event)">
+</app-dumbchoix>
+
+<h1>{{ choix }}</h1>
