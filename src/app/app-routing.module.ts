@@ -23,10 +23,6 @@ const routes: Routes = [
     redirectTo: "/home",
     pathMatch: "full"
   },
-  {
-    path: "login",
-    component: LoginComponent
-  },
 
   {
     path: "d",
@@ -40,14 +36,19 @@ const routes: Routes = [
     path: "entreprise",
     component: EntrepriseComponent
   },
-  {
-    path: "entreprise-modify",
-    component: EntrepriseModifyComponent
-  },
+
   {
     path: "contact",
     component: ContactComponent
   },
+
+  /////// lazyloading du module Admin////
+
+  {
+    path: "login",
+    loadChildren: "./adminpage/adminpage.module#AdminpageModule"
+  },
+
   { path: "not-found", component: FourOhFourComponent },
   { path: "**", redirectTo: "not-found" }
 ];
