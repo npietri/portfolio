@@ -23,7 +23,7 @@ export class LoginComponent {
   login() {
     const email = this.loginForm.get("email").value;
     this.authService.login(email);
-    this.router.navigate(["/entreprise"]);
+    this.router.navigate(["/entreprise-modify"]);
   }
 
   logout() {
